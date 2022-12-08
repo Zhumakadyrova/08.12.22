@@ -1,0 +1,39 @@
+*{
+  box-sizing: border-box;
+}
+.example-1{
+  width: 100px;
+  height: 100px;
+  animation-name: background-change;
+  animation-duration: 4s; 
+  animation-delay: 4s;
+  animation-fill-mode:both;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+.example-1:hover{
+  animation-play-state: paused;
+}
+@keyframes background-change {
+  0% {
+    background-color: tomato;
+    border: 0;
+  }
+  25%{
+    background-color: black;
+    border: 8px solid white;
+  }
+  50%{
+    background-color: green;
+    border: 50px solid yellow;
+  }
+  75%{
+    background-color: blueviolet;
+    border: 5px solid blue;
+  }
+  100% {
+    background-color: aqua;
+    border: 50px solid tomato;
+  }
+}
