@@ -4,11 +4,11 @@
 .example-1{
   width: 100px;
   height: 100px;
-  animation-name: background-change;
-  animation-duration: 4s; 
+  animation-name: background-change, change-size, rotate;
+  animation-duration: 0s, 0s; 
   animation-delay: 4s;
   animation-fill-mode:both;
-  animation-iteration-count: infinite;
+  animation-iteration-count: infinite, 1;
   animation-direction: alternate;
   animation-timing-function: ease-in-out;
 }
@@ -19,21 +19,226 @@
   0% {
     background-color: tomato;
     border: 0;
+    border-radius: 0%;
+    
+
   }
   25%{
     background-color: black;
-    border: 8px solid white;
+    border: 15px solid white;
+    
+    box-shadow: 20px 0 0;
   }
   50%{
     background-color: green;
-    border: 50px solid yellow;
+    border: 20px solid yellow;
+    border: 8px;
+    
+    box-shadow: 0 0 50px;
   }
   75%{
     background-color: blueviolet;
-    border: 5px solid blue;
+    border: 15px dotted blue;
+    transform:skew(30deg, 30deg);
   }
   100% {
     background-color: aqua;
-    border: 50px solid tomato;
+    border: 20px solid tomato;
+    border-radius: 50%;
+   
+
   }
 }
+@keyframes change-size{
+  from{
+    transform: scale(1);
+  }
+  to{
+    transform: scale(2);
+  }
+}
+@keyframes rotate{
+  from{
+    transform:rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+}
+.example-2{margin-top: 50px;}
+
+.example-2 span{
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-color: yellow;
+  box-shadow: 0 0 5px 5px rgb(red, green, blue);
+  margin-right: 20px;
+  border-radius: 50%;
+  animation: scale;
+  animation-duration: 600ms;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: alternate;
+}
+.example-2 span:nth-child(2){
+  animation-delay: 200ms;
+}
+.example-2 span:nth-child(3){
+  animation-delay: 40ms;
+}
+@keyframes scale {
+  from{
+transform: scale(1);
+  }
+  to{
+transform: scale(1.5);
+  }
+}
+
+.example-4{
+  align-items: center;
+  margin: left right;
+  margin-top: 80px;
+  width: 200px;
+  height: 200px;
+  border: 500px dotted rgb(228, 159, 11);
+  background-color: yellow;
+  box-shadow: 0 0 50px 50px rgb(228, 159, 11);
+  margin-right: 20px;
+  border-radius: 50%;
+  animation: movement;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: alternate;
+}
+@keyframes movement{
+  from{
+    box-shadow: 0 0 150px 50px rgb(228, 159, 11);
+    border: 0px dotted rgb(237, 152, 14);
+  }
+  to{
+    border: dashed rgb(228, 159, 11);
+    box-shadow: 0 0 350px 20px rgb(228, 159, 11);
+  }
+}
+.example-5{
+  align-items: center;
+  margin: left right;
+  margin-top: 80px;
+  width: 200px;
+  height: 200px;
+  border: 500px dotted rgb(228, 159, 11);
+  box-shadow: 0 0 50px 50px rgb(228, 159, 11);
+  margin-right: 20px;
+  background-color: rgba(29, 154, 152, 0.759);
+  border-radius: 50%;
+  animation: form-change;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: alternate;
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+     -moz-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+       -o-transform-origin: 100% 100%;
+          transform-origin :100% 100%;
+  
+}
+@keyframes form-change {
+  from{
+    box-shadow: 0 0 150px 50px rgb(228, 159, 11);
+    border: 0px dotted rgb(237, 152, 14);
+    align-items: left ;
+  }
+  to{
+    border: dashed rgb(228, 159, 11);
+    box-shadow: 0 0 350px 20px rgb(228, 159, 11);
+    align-items: center;
+  }
+}
+#heart {
+  position: relative;
+  width: 100px;
+  height: 90px;
+-webkit-animation:heart 2s infinite;
+animation:heart 2s infinite;
+ display: inline-block;
+ top: 25px;
+}
+
+#heart:before,
+#heart:after {
+  position: absolute;
+  content: "";
+  left: 50px;
+  top: 0;
+  width: 50px;
+  height: 80px;
+  background: #c0392b;
+  -moz-border-radius: 50px 50px 0 0;
+  border-radius: 50px 50px 0 0;
+  -webkit-transform: rotate(-45deg);
+     -moz-transform: rotate(-45deg);
+      -ms-transform: rotate(-45deg);
+       -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+  -webkit-transform-origin: 0 100%;
+     -moz-transform-origin: 0 100%;
+      -ms-transform-origin: 0 100%;
+       -o-transform-origin: 0 100%;
+          transform-origin: 0 100%;
+}
+
+#heart:after {
+  left: 0;
+  -webkit-transform: rotate(45deg);
+     -moz-transform: rotate(45deg);
+      -ms-transform: rotate(45deg);
+       -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transform-origin: 100% 100%;
+     -moz-transform-origin: 100% 100%;
+      -ms-transform-origin: 100% 100%;
+       -o-transform-origin: 100% 100%;
+          transform-origin :100% 100%;
+}
+
+@-webkit-keyframes heart{
+0%     { -webkit-transform:scale(.75,.75); }
+16%    { -webkit-transform:scale(1,1); }
+17%    { background-color:rgba(192,57,43,0); }
+33%    { -webkit-transform:scale(.75,.75); }
+49%    { -webkit-transform:scale(1,1); }
+50%    { background-color:rgba(192,57,43,0); }
+100%   { -webkit-transform:scale(.75,.75); }
+}
+
+@-moz-keyframes heart {
+0%     { -moz-transform:scale(.75,.75); }
+16%    { -moz-transform:scale(1,1); }
+17%    { background-color:rgba(192,57,43,0); }
+33%    { -moz-transform:scale(.75,.75); }
+49%    { -moz-transform:scale(1,1); }
+50%    { background-color:rgba(192,57,43,0); }
+100%   { -moz-transform:scale(.75,.75); }
+}
+
+@keyframes heart {
+0%     { transform:scale(.75,.75); }
+16%    { transform:scale(1,1); }
+17%    { background-color:rgba(192,57,43,0); }
+33%    { transform:scale(.75,.75); }
+49%    { transform:scale(1,1); }
+50%    { background-color:rgba(192,57,43,0); }
+100%   { transform:scale(.75,.75); }
+}
+
+@import url(https://fonts.googleapis.com/css?family=Lato);
+
